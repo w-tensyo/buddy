@@ -27,14 +27,14 @@ Things you may want to cover:
 ### Association
  - has_one :profile, dependent: :destroy
 
-
 ## Profiles Table
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null :true|
 |profile|text|null :true|
+|link|string|null: true|
 |age|integer|nnull :true|
-|url_link|string|null: true|
+|gender|string|null :true|
 |user_id|references|null :false|
 ### Association
  - belongs_to :profile
