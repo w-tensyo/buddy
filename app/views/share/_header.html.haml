@@ -1,0 +1,48 @@
+.HeaderBody
+  .HeaderBody__Upper
+    .HeaderBody__Upper__Title
+      = link_to root_path, id: 'Title' do
+        Buddy
+  .HeaderBody__Under
+    .HeaderBody__Under__Category
+      = link_to '#' , class: 'HeaderLink' do
+        = icon('fas','bars')
+        カテゴリ
+        .ParentCategory
+          -# 非同期通信で表示するエリア
+          =link_to '#',class: 'ParentCategory__List' do
+            .ParentCategory__List--Link 弦楽器
+          =link_to "#" ,class: 'ParentCategory__List' do
+            .ParentCategory__List--Link 鍵盤楽器
+          =link_to "#" ,class: 'ParentCategory__List' do
+            .ParentCategory__List--Link 打楽器
+        .ChildrenCategory
+          -# 非同期通信で表示するエリア
+          =link_to '#',class: 'ChildrenCategory__List' do
+            .ParentCategory__List--Link 弦楽器
+          =link_to "#" ,class: 'ChildrenCategory__List' do
+            .ParentCategory__List--Link 鍵盤楽器
+          =link_to "#" ,class: 'ChildrenCategory__List' do
+            .ParentCategory__List--Link 打楽器
+        
+    .HeaderBody__Under__User
+      .HeaderBody__Under__User__Area
+        - if user_signed_in? && current_user.profile.image == nil
+          .HeaderBody__Under__User__Area--Image
+            = image_tag 'human.png', class: 'Icon'
+          .HeaderBody__Under__User__Area--Name
+            =link_to destroy_user_session_path, method: :delete, class: 'HeaderLink' do
+              = "#{current_user.name}" + " さん"
+        - elsif user_signed_in? && current_user.profile.image != nil
+          .HeaderBody__Under__User__Area--Image
+            = image_tag 'human.png', class: 'Icon'
+          .HeaderBody__Under__User__Area--Name
+            =link_to destroy_user_session_path, method: :delete, class: 'HeaderLink' do
+              = "#{current_user.name}" + " さん"
+        - else
+          .HeaderBody__Under__User__Area--SignArea
+            = link_to '会員登録',new_user_registration_path
+              
+          .HeaderBody__Under__User__Area--SignArea
+            =link_to user_session_path do
+              ログイン

@@ -1,0 +1,37 @@
+body{
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none;       /* Firefox 対応 */
+}
+body::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+
+#Title{
+  font-size: 40px;
+  line-height: 60px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.Icon{
+  height:33px;
+  width: 33px;
+  background-color: #ddd;
+  border: 1px solid $header-font-color;
+  border-radius: 50%;
+  display: block;
+}
+
+a{
+  text-decoration: none;
+}
+
+h2{
+  font-size:18px;
+  color: $bass-font-color;
+  font-weight: bold;
+}
+
+.HeaderLink{
+  font-size: 14px;
+  color:$header-font-color;
+}

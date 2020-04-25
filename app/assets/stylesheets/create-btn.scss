@@ -1,0 +1,18 @@
+.CreateBtn{
+  position: absolute;
+  right:20px;
+  bottom:20px;
+  &__Icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $accent-color;
+    i{
+      width: 100px;
+      line-height: 100px;
+      text-align: center;
+      font-size:52px;
+      color: $content-background-color;
+    }
+  }
+}

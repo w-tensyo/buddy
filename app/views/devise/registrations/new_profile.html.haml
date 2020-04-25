@@ -1,0 +1,57 @@
+= render "/share/header"
+.SignUpBody
+  .SignUpBody__Content
+    .SignUpBody__Content__Title
+      %h2 プロフィール設定
+    .SignUpBody__Content__EntryArea
+      = form_for(@profile, url: profile_path, method: 'POST',multipart: 'true') do |f|
+        .SignUpBody__Content__EntryArea__ErrorMsgArea
+          = render "devise/shared/error_messages", resource: @profile
+        .SignUpBody__Content__EntryArea__Form
+          .SignUpBody__Content__EntryArea__Form__Title
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpLabel
+              = f.label "自己紹介文"
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpOptional
+              任意
+          = f.text_area :profile, autofocus: true, placeholder: "プロフィールを入力してください", class: 'SignUpBody__Content__EntryArea__Form__TextArea'
+        .SignUpBody__Content__EntryArea__Form
+          .SignUpBody__Content__EntryArea__Form__Title
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpLabel
+              プロフィール画像
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpOptional
+              任意
+          .SignUpBody__Content__EntryArea__Form__Uploader
+            .SignUpBody__Content__EntryArea__Form__Uploader__FileView
+              = f.label :image ,id: "MyFile" do
+                .UploaderIconArea
+                  = image_tag 'human.png',id: "UploadFile"
+                  = f.file_field :image
+            .SignUpBody__Content__EntryArea__Form__Uploader__Text
+              左枠内をクリックして
+              %br/
+              画像をアップロードしてください
+        .SignUpBody__Content__EntryArea__Form
+          .SignUpBody__Content__EntryArea__Form__Title
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpLabel
+              = f.label "ウェブサイト"
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpOptional
+              任意
+          = f.text_field :link, autofocus: true, placeholder: "https://・・・", class: 'SignUpBody__Content__EntryArea__Form__Text'
+        .SignUpBody__Content__EntryArea__Form
+          .SignUpBody__Content__EntryArea__Form__Title
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpLabel
+              = f.label :age
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpOptional
+              任意
+          = f.number_field :age, autofocus: true, placeholder: "任意", class: 'SignUpBody__Content__EntryArea__Form__Text'
+        .SignUpBody__Content__EntryArea__Form
+          .SignUpBody__Content__EntryArea__Form__Title
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpLabel
+              = f.label :gender
+            .SignUpBody__Content__EntryArea__Form__Title__Label#SignUpRequired
+              必須
+          = f.select :gender,[["未公開", "未公開"],["男性", "男性"],["女性", "女性"]],{},{class: 'SignUpBody__Content__EntryArea__Form__PullDown'}
+        .SignUpBody__Content__EntryArea__Form
+          .actions
+            = f.submit "登録", class: "SignUpBody__Content__EntryArea__Form__Btn"
+= render "/share/footer"

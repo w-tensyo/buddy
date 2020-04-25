@@ -1,0 +1,139 @@
+.SignUpBody{
+  margin-top:20px;
+  min-height: 100vh;
+  &__Content{
+    margin: 0 auto;
+    width: 600px;
+    padding: 10px 20px;
+    background-color: $signup-background-color;
+    &__Title{
+      height: 30px;
+      border-bottom: 1px solid $category-menu-border-btm;
+      margin: 0 auto;
+      h2{
+        text-align: center;
+      }
+    }
+    &__EntryArea{
+      padding:10px 0px;
+      &__Form{
+        width: 100%;
+        margin-bottom: 12px;
+        &__Title{
+          width: 100%;
+          padding-left: 4px;
+          display: flex;
+          justify-content: space-between;
+          &__Label{
+            margin-right: 4px;
+            margin-bottom:8px;
+          }
+        }
+        &__Text{
+          font-size:12px;
+          height:35px;
+          padding: 4px 8px;
+          width: calc(100% - 16px);
+          border: 1px solid $content-border;
+          border-radius: 4px;
+        }
+        &__TextArea{
+          font-size:12px;
+          min-height:200px;
+          max-width:calc(100% - 16px);
+          min-width:calc(100% - 16px);
+          padding: 4px 8px;
+          width: calc(100% - 16px);
+          border: 1px solid $content-border;
+          border-radius: 4px;
+        }
+        &__Btn{
+          margin: 24px 0px 10px 0px;
+          padding: 0 8px;
+          height: 60px;
+          width: 100%;
+          border: 0px;
+          border-radius: 2px;
+          background-color: $main-color;
+          color:$require-font-color;
+        }
+        &__PullDown{
+          font-size:12px;
+          height: 30px;
+          padding: 4px 8px;
+          width: 100px;
+          border: 1px solid $content-border;
+          border-radius: 2px;
+
+        }
+        &__Uploader{
+          display: flex;
+          &__FileView{
+
+          }
+          &__Text{
+            margin-top:80px;
+            padding-left: 10px;
+            font-size:14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#SignUpLabel{
+  font-size: 14px;
+  line-height: 24px;
+}
+
+#SignUpRequired{
+  font-size: 10px;
+  color: $require-font-color;
+  padding: 2px 8px;
+  background-color: $accent-color;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#SignUpOptional{
+  font-size: 10px;
+  color: $require-font-color;
+  padding: 2px 8px;
+  background-color: $category-menu;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 20px;
+}
+
+
+#MyFile{
+  display: block;
+  height: 200px;
+  width: 200px;
+  border: 1px solid $category-menu-border-btm;
+  background-color: #fff;
+  input{
+    display: none;
+  }
+}
+.UploaderIconArea{
+  img{
+      max-width: 200px;
+      max-height:200px;
+      background-size: cover;
+  }
+}
+
+
+#error_explanation{
+  padding:10px 0px;
+  width: 100%;
+  font-size: 12px;
+  color: $accent-color;
+  h2{
+    text-align: center;
+    font-size: 14px;
+  }
+}
